@@ -1,0 +1,25 @@
+<html>
+    <head>
+               
+    </head>
+
+    <body onload="getTime()">
+    <h1>My name is Raeen Ahmed and my favorite hobby is listening to music. The current time is: <div id="time"></div> 
+    </h1>
+    <script>
+            function getTime() {
+            const today = new Date();
+            let hh = today.getHours();
+            let mm = today.getMinutes();
+            let ss = today.getSeconds();
+            hh = hh % 12;
+            hh = hh ? hh : 12; // the hour '0' should be '12'
+            hh = hh < 10 ? '0'+hh : hh;
+            mm = mm < 10 ? '0'+mm : mm;
+            ss = ss < 10 ? '0'+ss : ss;
+            document.getElementById('time').innerHTML =  hh + ":" + mm + ":" + ss;
+            setTimeout(startTime, 1000);
+            }
+    </script> 
+    </body>
+</html>
